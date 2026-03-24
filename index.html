@@ -52,8 +52,37 @@
 
       <section class="planner-grid">
         <aside class="side-text">
-          <p>widgetBox has been permanently shut down.</p>
-          <p>All services are no longer available.</p>
+          <div class="side-quote">
+            <div class="quote-nav">
+              <span class="arrow">◀</span>
+              <span class="arrow">▶</span>
+            </div>
+            <p class="quote-text">Exercise, 2 liters of water, 8 hours of sleep, wake up early, healthy meals, journaling, everything shower, smile genuinely, focus to my goals</p>
+          </div>
+          <div class="side-card monthly">
+            <h3>❤️ Monthly Goals ❤️</h3>
+            <ul class="months">
+              <li>▶ January</li>
+              <li>▶ February</li>
+              <li>▶ March</li>
+              <li>▶ April</li>
+              <li>▶ May</li>
+              <li>▶ June</li>
+              <li>▶ July</li>
+              <li>▶ August</li>
+              <li>▶ September</li>
+              <li>▶ October</li>
+              <li>▶ November</li>
+              <li>▶ December</li>
+            </ul>
+          </div>
+          <div class="side-mini-card inspo-card">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=500&q=80" alt="Pink bedroom aesthetic" />
+            <p>Make your life the prettiest story you ever told.</p>
+          </div>
+          <div class="side-mini-card sticker-card">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Pink lifestyle detail" />
+          </div>
         </aside>
 
         <section class="planner-core">
@@ -68,48 +97,39 @@
             </div>
           </div>
 
-          <div class="forms-row">
-            <article class="panel">
-              <h2>Add Task</h2>
-              <form id="taskForm" class="form">
-                <label>
-                  <span>Title</span>
-                  <input id="taskTitle" type="text" maxlength="100" placeholder="Write a task" />
-                </label>
-                <label>
-                  <span>Due date</span>
-                  <input id="taskDueDate" type="date" />
-                </label>
-                <label>
-                  <span>Priority</span>
-                  <select id="taskPriority">
-                    <option value="Low">Low</option>
-                    <option value="Medium" selected>Medium</option>
-                    <option value="High">High</option>
-                  </select>
-                </label>
-                <button type="submit">Add Task</button>
-                <p id="taskError" class="error"></p>
-              </form>
-            </article>
-
-            <article class="panel">
-              <h2>Add Goal</h2>
-              <form id="goalForm" class="form">
-                <label>
-                  <span>Goal</span>
-                  <input id="goalTitle" type="text" maxlength="120" placeholder="Write a long-term goal" />
-                </label>
-                <button type="submit">Add Goal</button>
-                <p id="goalError" class="error"></p>
-                <div class="progress-wrap">
-                  <span id="progressText">0% done</span>
-                  <div class="progress-track">
-                    <div id="progressBar"></div>
-                  </div>
-                </div>
-              </form>
-            </article>
+          <div class="gallery-grid">
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">🏋️ Exercise more</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">💞 Solitude</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">🧠 Healthy mind</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">⭐ Try new hobby</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">👗 Well-dressed</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">🖊️ Journaling</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">☕ Socialize with friends</div>
+            </div>
+            <div class="gallery-card">
+              <div class="gallery-img" style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80')"></div>
+              <div class="gallery-label">🔖 Learn new things</div>
+            </div>
           </div>
 
           <article class="panel list-panel">
@@ -131,10 +151,50 @@
         </section>
 
         <aside class="side-text completed-box">
-          <p>widgetBox has been permanently shut down.</p>
-          <p>All services are no longer available.</p>
-          <h2>Completed</h2>
-          <ul id="completedList" class="list completed"></ul>
+          <div class="side-header">
+            <h2 class="side-title">📋 To-do List</h2>
+          </div>
+          <div class="category-box">
+            <h4 class="category-name">Personal</h4>
+            <button class="add-btn">💗 add to-...</button>
+            <ul class="category-items">
+              <li><input type="checkbox" /> <span>To-do</span></li>
+              <li><input type="checkbox" /> <span>To-do</span></li>
+              <li><input type="checkbox" /> <span>To-do</span></li>
+            </ul>
+          </div>
+          <div class="category-box">
+            <h4 class="category-name">College</h4>
+            <button class="add-btn">💗 add to-...</button>
+            <ul class="category-items">
+              <li><input type="checkbox" /> <span>To-do</span></li>
+              <li><input type="checkbox" /> <span>To-do</span></li>
+            </ul>
+          </div>
+          <div class="category-box">
+            <h4 class="category-name">Work</h4>
+            <button class="add-btn">💗 add to-...</button>
+            <ul class="category-items">
+              <li><input type="checkbox" /> <span>To-do</span></li>
+              <li><input type="checkbox" /> <span>To-do</span></li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <h2 class="side-title section-title">— Productivity</h2>
+            <ul class="plain-list">
+              <li>🕊️ Finance Trac...</li>
+              <li>📚 Read Tracker</li>
+              <li>📝 Study Planner</li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <h2 class="side-title section-title">— Bucket List</h2>
+            <button class="add-btn">💗 add bu...</button>
+            <ul class="plain-list bucket">
+              <li><input type="checkbox" /> <span>Run a</span></li>
+              <li><input type="checkbox" /> <span>To-do</span></li>
+            </ul>
+          </div>
         </aside>
       </section>
     </main>
