@@ -10,103 +10,132 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="workspace">
-    <header class="appbar">
-      <div class="appbar-left">
-        <span class="dot"></span>
-        <span class="app-name">Planner</span>
+  <div class="shell">
+    <header class="topbar">
+      <div class="top-left">
+        <span class="page-dot">🧋</span>
+        <span class="top-title">That Girl Life Planner</span>
+        <span class="top-sub">Private</span>
       </div>
-      <div class="appbar-right">
+      <div class="top-right">
+        <span>Edited 41m ago</span>
         <button type="button">Share</button>
       </div>
     </header>
 
-    <aside class="sidebar">
-      <h2>Private</h2>
-      <nav>
-        <a href="#" class="is-page">🏠 Home</a>
-        <a href="#" class="is-page is-active">🗒️ That Girl Life Planner</a>
-        <a href="#" class="is-page">✅ Tasks</a>
-        <a href="#" class="is-page">🎯 Goals</a>
-        <a href="#" class="is-page">✨ Completed</a>
-      </nav>
-    </aside>
-
-    <main class="page">
-      <div class="cover"></div>
-      <header class="page-head">
-        <p class="crumb">Personal / Planner</p>
-        <div class="title-row">
-          <span class="icon">🗒️</span>
-          <h1>That Girl Life Planner</h1>
+    <main class="surface">
+      <section class="cover">
+        <div class="cover-actions">
+          <button type="button">Change</button>
+          <button type="button">Reposition</button>
+          <button type="button">↓</button>
         </div>
-        <p class="subtitle">Daily tasks and long-term goals</p>
-        <div class="progress-wrap">
-          <span id="progressText">0% done</span>
-          <div class="progress-track">
-            <div id="progressBar"></div>
-          </div>
-        </div>
-      </header>
+      </section>
 
-      <section class="grid">
-        <article class="panel">
-          <h2>✅ Add Task</h2>
-          <form id="taskForm" class="form">
-            <label>
-              <span>Title</span>
-              <input id="taskTitle" type="text" maxlength="100" placeholder="Write a task" />
-            </label>
-            <label>
-              <span>Due date</span>
-              <input id="taskDueDate" type="date" />
-            </label>
-            <label>
-              <span>Priority</span>
-              <select id="taskPriority">
-                <option value="Low">Low</option>
-                <option value="Medium" selected>Medium</option>
-                <option value="High">High</option>
-              </select>
-            </label>
-            <button type="submit">Add Task</button>
-            <p id="taskError" class="error"></p>
-          </form>
-        </article>
+      <section class="hero">
+        <div class="hero-icon">🧋</div>
+        <p class="comment">💬 Add comment</p>
+        <h1>That Girl Life Planner 🫶♡･🌷+</h1>
+        <div class="quote">Pour yourself a big cup of tea and remember life can be lovely 💗🫖.</div>
 
-        <article class="panel">
-          <h2>🎯 Add Goal</h2>
-          <form id="goalForm" class="form">
-            <label>
-              <span>Goal</span>
-              <input id="goalTitle" type="text" maxlength="120" placeholder="Write a long-term goal" />
-            </label>
-            <button type="submit">Add Goal</button>
-            <p id="goalError" class="error"></p>
-          </form>
-        </article>
+        <nav class="quick-links">
+          <a href="#">🎀 Monthly Goals</a>
+          <a href="#">🖌️ To-do List</a>
+          <a href="#">🩰 Productivity Pages</a>
+          <a href="#">💌 Bucket List</a>
+          <a href="#">💦 Daily Habit Tracker</a>
+          <a href="#">💗 Weekly Agenda</a>
+          <a href="#">🗓️ Important Dates</a>
+          <a href="#">🌸 Daily Affirmations</a>
+        </nav>
+      </section>
 
-        <article class="panel wide">
-          <div class="list-head">
-            <h2>📋 Tasks</h2>
-            <div class="filters" role="tablist" aria-label="Task filters">
-              <button class="filter is-active" data-filter="all" type="button">All</button>
-              <button class="filter" data-filter="pending" type="button">Pending</button>
-              <button class="filter" data-filter="completed" type="button">Completed</button>
+      <section class="planner-grid">
+        <aside class="side-text">
+          <p>widgetBox has been permanently shut down.</p>
+          <p>All services are no longer available.</p>
+        </aside>
+
+        <section class="planner-core">
+          <div class="core-head">
+            <div class="vision-pill">◍◍ Vision Board</div>
+            <div class="core-actions">
+              <span>☰</span>
+              <span>↕</span>
+              <span>⚡</span>
+              <span>⌕</span>
+              <button type="button" class="new-btn">New ▾</button>
             </div>
           </div>
-          <ul id="taskList" class="list"></ul>
-        </article>
 
-        <article class="panel wide">
-          <h2>🌱 Goals</h2>
-          <ul id="goalList" class="list"></ul>
-        </article>
+          <div class="forms-row">
+            <article class="panel">
+              <h2>Add Task</h2>
+              <form id="taskForm" class="form">
+                <label>
+                  <span>Title</span>
+                  <input id="taskTitle" type="text" maxlength="100" placeholder="Write a task" />
+                </label>
+                <label>
+                  <span>Due date</span>
+                  <input id="taskDueDate" type="date" />
+                </label>
+                <label>
+                  <span>Priority</span>
+                  <select id="taskPriority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </label>
+                <button type="submit">Add Task</button>
+                <p id="taskError" class="error"></p>
+              </form>
+            </article>
 
-        <article class="panel wide">
-          <h2>✨ Completed Items</h2>
+            <article class="panel">
+              <h2>Add Goal</h2>
+              <form id="goalForm" class="form">
+                <label>
+                  <span>Goal</span>
+                  <input id="goalTitle" type="text" maxlength="120" placeholder="Write a long-term goal" />
+                </label>
+                <button type="submit">Add Goal</button>
+                <p id="goalError" class="error"></p>
+                <div class="progress-wrap">
+                  <span id="progressText">0% done</span>
+                  <div class="progress-track">
+                    <div id="progressBar"></div>
+                  </div>
+                </div>
+              </form>
+            </article>
+          </div>
+
+          <article class="panel list-panel">
+            <div class="list-head">
+              <h2>Tasks</h2>
+              <div class="filters" role="tablist" aria-label="Task filters">
+                <button class="filter is-active" data-filter="all" type="button">All</button>
+                <button class="filter" data-filter="pending" type="button">Pending</button>
+                <button class="filter" data-filter="completed" type="button">Completed</button>
+              </div>
+            </div>
+            <ul id="taskList" class="list"></ul>
+          </article>
+
+          <article class="panel list-panel">
+            <h2>Goals</h2>
+            <ul id="goalList" class="list"></ul>
+          </article>
+        </section>
+
+        <aside class="side-text completed-box">
+          <p>widgetBox has been permanently shut down.</p>
+          <p>All services are no longer available.</p>
+          <h2>Completed</h2>
           <ul id="completedList" class="list completed"></ul>
-        </article>
+        </aside>
       </section>
     </main>
   </div>
