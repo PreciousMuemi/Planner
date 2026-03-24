@@ -193,7 +193,6 @@ h1 {
   font-size: 0.95rem;
   line-height: 1.5;
   padding: 12px 10px;
-  font-family: 'Courier New', monospace;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -203,9 +202,58 @@ h1 {
   margin: 10px 0 14px;
 }
 
+.widget-note {
+  color: #ececec;
+  font-size: 0.93rem;
+  line-height: 1.25;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+.widget-note p {
+  margin: 0 0 6px;
+}
+
+.mini-track {
+  height: 14px;
+  border: 1px solid #2b2e35;
+  border-radius: 2px;
+  background: #1a1d23;
+  position: relative;
+}
+
+.mini-track span {
+  position: absolute;
+  left: 18px;
+  top: 2px;
+  width: calc(100% - 54px);
+  height: 8px;
+  border-radius: 999px;
+  background: #a9aaac;
+}
+
+.mini-track::before,
+.mini-track::after {
+  position: absolute;
+  top: -3px;
+  color: #7b7d82;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.mini-track::before {
+  content: '◀';
+  left: 4px;
+}
+
+.mini-track::after {
+  content: '▶';
+  right: 4px;
+}
+
 .side-quote {
   position: relative;
-  padding: 14px 12px;
+  padding: 10px 2px 8px;
 }
 
 .quote-nav {
@@ -229,17 +277,17 @@ h1 {
 .quote-text {
   margin: 0;
   color: #d77a9c;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-style: italic;
-  line-height: 1.45;
+  line-height: 1.42;
   font-weight: 500;
 }
 
 .side-card {
-  background: #3a2e38;
+  background: #5a3049;
   border-radius: 12px;
-  padding: 14px 16px;
-  border: 1px solid #4a3a48;
+  padding: 16px 16px;
+  border: 1px solid #6a3e56;
 }
 
 .side-card h3 {
@@ -259,7 +307,7 @@ h1 {
 
 .side-mini-card img {
   width: 100%;
-  height: 95px;
+  height: 92px;
   object-fit: cover;
   border-radius: 2px;
   display: block;
@@ -282,6 +330,7 @@ h1 {
 
 .sticker-card img {
   height: 150px;
+  object-fit: cover;
   border-radius: 0;
 }
 
@@ -295,15 +344,20 @@ h1 {
 }
 
 .months li {
-  color: #c8c9cc;
-  font-size: 0.93rem;
-  padding: 5px 0;
+  color: #ece6ea;
+  font-size: 1.02rem;
+  padding: 3px 0;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
+.months li:hover {
+  color: #ffd8e9;
+}
+
 .completed-box {
-  padding: 12px 10px;
+  position: relative;
+  padding: 12px 10px 20px;
 }
 
 .side-header {
@@ -312,12 +366,12 @@ h1 {
 
 .side-title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.52rem;
   font-weight: 700;
   color: #d77a9c;
   text-align: left;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 11px;
 }
 
 .side-title::after {
@@ -332,22 +386,22 @@ h1 {
 
 .category-box {
   margin-bottom: 14px;
-  background: #3a2e38;
+  background: #111419;
   border-radius: 10px;
-  padding: 12px;
-  border: 1px solid #4a3a48;
+  padding: 12px 12px 11px;
+  border: 1px solid #2a2d32;
 }
 
 .category-name {
   margin: 0 0 10px;
-  font-size: 1.03rem;
+  font-size: 1.07rem;
   font-weight: 700;
   color: #f5f5f3;
   background: #6a3553;
   border-radius: 7px;
-  padding: 4px 10px;
+  padding: 4px 12px;
   display: inline-block;
-  min-width: 124px;
+  min-width: 128px;
 }
 
 .add-btn {
@@ -356,9 +410,9 @@ h1 {
   background: transparent;
   color: #d77a9c;
   border-radius: 8px;
-  padding: 6px 12px;
+  padding: 6px 13px;
   font: inherit;
-  font-size: 0.89rem;
+  font-size: 0.96rem;
   margin-bottom: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -440,7 +494,7 @@ h1 {
 
 .plain-list li {
   color: #dedfe2;
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -454,6 +508,24 @@ h1 {
 .plain-list.bucket li {
   color: #b8b9bd;
   font-weight: 500;
+}
+
+.side-rail {
+  position: absolute;
+  right: -32px;
+  top: 132px;
+  width: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.side-rail span {
+  display: block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #72757d;
+  opacity: 0.9;
 }
 
 .planner-core {
@@ -722,8 +794,8 @@ button[type="submit"] {
 .gallery-card {
   border-radius: 10px;
   overflow: hidden;
-  background: #1a1d24;
-  border: 1px solid #30333a;
+  background: #212329;
+  border: 1px solid #2a2d33;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -734,15 +806,16 @@ button[type="submit"] {
 
 .gallery-img {
   width: 100%;
-  height: 140px;
+  height: 146px;
   background-size: cover;
   background-position: center;
 }
 
 .gallery-label {
-  padding: 10px 12px;
-  font-size: 0.95rem;
-  font-weight: 500;
+  padding: 8px 12px;
+  font-size: 1.95rem;
+  font-size: clamp(0.95rem, 1vw, 1.95rem);
+  font-weight: 600;
   color: #f0f1f0;
   display: flex;
   align-items: center;
