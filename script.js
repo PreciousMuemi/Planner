@@ -66,6 +66,7 @@ function formatDate(value) {
 }
 
 function renderTasks() {
+  if (!taskList) return;
   const items = state.tasks.filter(byFilter);
   if (!items.length) {
     taskList.innerHTML = '<li class="empty">No tasks here</li>';
@@ -98,6 +99,7 @@ function renderTasks() {
 }
 
 function renderGoals() {
+  if (!goalList) return;
   if (!state.goals.length) {
     goalList.innerHTML = '<li class="empty">No goals yet</li>';
     return;
@@ -122,6 +124,7 @@ function renderGoals() {
 }
 
 function renderCompleted() {
+  if (!completedList) return;
   const doneTasks = state.tasks.filter((x) => x.completed).map((x) => `Task: ${x.title}`);
   const doneGoals = state.goals.filter((x) => x.completed).map((x) => `Goal: ${x.title}`);
   const done = [...doneTasks, ...doneGoals];
@@ -135,6 +138,7 @@ function renderCompleted() {
 }
 
 function renderProgress() {
+  if (!progressText || !progressBar) return;
   const total = state.tasks.length;
   const completed = state.tasks.filter((x) => x.completed).length;
   const ratio = total ? Math.round((completed / total) * 100) : 0;
@@ -143,6 +147,7 @@ function renderProgress() {
 }
 
 function renderFilters() {
+  if (!filterButtons.length) return;
   filterButtons.forEach((btn) => {
     const active = btn.dataset.filter === state.filter;
     btn.classList.toggle("is-active", active);
@@ -264,11 +269,12 @@ function onFilterChange(event) {
   render();
 }
 
-taskForm.addEventListener("submit", upsertTask);
-goalForm.addEventListener("submit", upsertGoal);
-taskList.addEventListener("click", onTaskActions);
-goalList.addEventListener("click", onGoalActions);
-document.querySelector(".filters").addEventListener("click", onFilterChange);
+if (taskForm) taskForm.addEventListener("submit", upsertTask);
+if (goalForm) goalForm.addEventListener("submit", upsertGoal);
+if (taskList) taskList.addEventListener("click", onTaskActions);
+if (goalList) goalList.addEventListener("click", onGoalActions);
+const filters = document.querySelector(".filters");
+if (filters) filters.addEventListener("click", onFilterChange);
 
 load();
 render();
