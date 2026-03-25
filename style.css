@@ -839,6 +839,8 @@ button[type="submit"] {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
 .empty-card {
   background: #1a1d23;
   border: 1px dashed #3d4147;
@@ -854,6 +856,329 @@ button[type="submit"] {
   justify-content: center;
 }
 
+.tracker-section {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.tracker-tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.tab-label {
+  background: #6a3553;
+  color: #f0f1f0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 8px 18px;
+}
+
+.tab-label:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.tab-label:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.tracker-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.habit-tracker,
+.weekly-agenda {
+  min-width: 0;
+}
+
+.habit-tracker {
+  background: #14171c;
+  border: 1px solid #2a2d32;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.tracker-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.overview-btn {
+  background: transparent;
+  border: 1px solid #3d4147;
+  color: #c6c8cc;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.no-date {
+  color: #999ba1;
+  font-size: 0.9rem;
+}
+
+.controls {
+  color: #7b7d82;
+  margin-left: auto;
+}
+
+.new-btn-sm {
+  background: #2f80ed;
+  border: 1px solid #3d75c9;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.calendar-view {
+  overflow-x: auto;
+}
+
+.calendar-month {
+  color: #999ba1;
+  font-size: 0.93rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(78px, 1fr));
+  gap: 6px;
+}
+
+.day-header {
+  color: #7b7d82;
+  font-size: 0.82rem;
+  text-align: center;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.day-cell {
+  background: #1a1d23;
+  border: 1px solid #2a2d32;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.82rem;
+  min-height: 132px;
+}
+
+.day-num {
+  color: #f0f1f0;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.habits {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.habits label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #c6c8cc;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.habits input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #5a5d65;
+  border-radius: 2px;
+  background: #1a1d23;
+  cursor: pointer;
+  appearance: none;
+}
+
+.habits input[type="checkbox"]:checked {
+  background: #d77a9c;
+  border-color: #d77a9c;
+}
+
+.weekly-agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agenda-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.manage-btn {
+  background: transparent;
+  border: 1px solid #3d4147;
+  color: #c6c8cc;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #999ba1;
+  font-size: 0.9rem;
+}
+
+.nav-controls span {
+  cursor: pointer;
+  color: #7b7d82;
+}
+
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.day-card {
+  background: #6a3553;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #7a4563;
+}
+
+.card-image {
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #5a4a5a;
+}
+
+.day-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #f0f1f0;
+  font-weight: 600;
+}
+
+.day-todos {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.day-todos li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #c8c9cc;
+  font-size: 0.9rem;
+}
+
+.day-todos input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #6a6d75;
+  border-radius: 3px;
+  background: #5a3a5a;
+  cursor: pointer;
+  appearance: none;
+}
+
+.day-todos input[type="checkbox"]:checked {
+  background: #d77a9c;
+  border-color: #d77a9c;
+}
+
+.add-btn-sm {
+  width: 100%;
+  border: 1px solid #7a4563;
+  background: transparent;
+  color: #d77a9c;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-btn-sm:hover {
+  background: rgba(215, 122, 156, 0.08);
+}
+
+.left-section-title {
+  margin: 16px 0 10px;
+  color: #d34892;
+  font-size: 2rem;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 700;
+}
+
+.important-card,
+.affirmation-card {
+  background: #5a3049;
+  border: 1px solid #6a3e56;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.important-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #f0f1f0;
+  font-weight: 600;
+}
+
+.important-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.important-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: #f0f1f0;
+  font-size: 0.95rem;
+}
+
+.important-card li span:last-child {
+  color: #f2dbe6;
+}
+
+.affirmation-card p {
+  margin: 8px 0;
+  color: #f0f1f0;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
 @media (max-width: 1300px) {
@@ -868,21 +1193,14 @@ button[type="submit"] {
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-.empty-card {
-  background: #1a1d23;
-  border: 1px dashed #3d4147;
-}
 
-.empty-card .gallery-img {
-  background: #141820;
-}
+  .tracker-grid {
+    grid-template-columns: 1fr;
+  }
 
-.gallery-empty-label {
-  color: #8a8d94;
-  font-weight: 500;
-  justify-content: center;
-}
-
+  .agenda-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 900px) {
@@ -910,5 +1228,11 @@ button[type="submit"] {
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .agenda-grid {
+    grid-template-columns: 1fr;
+  }
 }
+
+
 
