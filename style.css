@@ -28,6 +28,21 @@ body {
   font-size: 15px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#monthly-goals,
+#to-do-list,
+#productivity-pages,
+#bucket-list,
+#daily-habit-tracker,
+#weekly-agenda,
+#important-dates,
+#daily-affirmations {
+  scroll-margin-top: 16px;
+}
+
 .shell {
   min-height: 100vh;
   background: var(--bg);
@@ -1179,6 +1194,86 @@ button[type="submit"] {
   color: #f0f1f0;
   font-size: 1rem;
   line-height: 1.45;
+}
+
+.closing-quote {
+  margin-top: 10px;
+  background: #f4eef3;
+  color: #e28bb6;
+  border-radius: 4px;
+  padding: 14px 20px;
+  font-size: 2rem;
+  font-size: clamp(1.1rem, 1.6vw, 2rem);
+  line-height: 1.25;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.spotify-card {
+  background: #8f1154;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #a42a6b;
+  display: flex;
+  flex-direction: column;
+}
+
+.spotify-top {
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.spotify-top img {
+  width: 102px;
+  height: 102px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.spotify-meta h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.spotify-meta p {
+  margin: 6px 0 0;
+  color: #f0bfd7;
+  font-size: 0.95rem;
+}
+
+.spotify-controls {
+  color: #f7d7e7;
+  padding: 0 14px 10px;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+}
+
+.track-list {
+  list-style: decimal;
+  margin: 0;
+  padding: 10px 14px 14px 34px;
+  background: #7f0d49;
+  color: #fff;
+  display: grid;
+  gap: 8px;
+}
+
+.track-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.track-list li span:last-child {
+  color: #ffd4e8;
 }
 
 @media (max-width: 1300px) {
