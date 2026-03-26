@@ -40,9 +40,9 @@ html {
 #weekly-agenda,
 #important-dates,
 #daily-affirmations {
-  scroll-margin-top: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
-
 .shell {
   min-height: 100vh;
   background: var(--bg);
@@ -77,7 +77,6 @@ html {
 .top-sub,
 .top-right span {
   font-size: 0.85rem;
-  color: #8e8f96;
 }
 
 .topbar button {
@@ -96,16 +95,6 @@ html {
   margin: 0 auto;
   padding: 0 4px 28px;
 }
-
-.cover {
-  margin-top: 4px;
-  height: 290px;
-  border-radius: 0;
-  background: var(--pink-cover);
-  position: relative;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
-}
-
 .cover-actions {
   position: absolute;
   right: 16px;
@@ -371,6 +360,7 @@ h1 {
   align-items: center;
   gap: 8px;
   transition: color 0.2s ease;
+  text-align: left;
 }
 
 .months li:hover {
@@ -388,6 +378,8 @@ h1 {
   padding: 0 5px;
   font-size: 0.72rem;
   line-height: 1;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .month-play.is-active {
@@ -398,37 +390,74 @@ h1 {
 
 .month-goals-dropdown {
   max-height: 0;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition: max-height 0.3s ease;
   margin-top: 0;
 }
 
 .month-goals-dropdown.open {
-  max-height: 200px;
+  max-height: 400px;
   margin-top: 8px;
+  overflow-y: auto;
 }
 
 .month-goals-panel {
-  background: rgba(28, 17, 25, 0.45);
+  background: rgba(28, 17, 25, 0.65);
   border: 1px solid #70485f;
   border-radius: 10px;
   padding: 10px 12px;
   color: #f2eaf0;
   font-size: 0.88rem;
-  line-height: 1.35;
+  line-height: 1.5;
+  text-align: left;
 }
 
 .month-goals-panel h4 {
   margin: 0 0 8px;
+    text-align: left;
   font-size: 0.95rem;
   color: #ffd8e9;
 }
 
 .month-goals-panel ul {
   margin: 0;
-  padding-left: 16px;
+  padding: 0;
   display: grid;
   gap: 6px;
+  list-style: none;
+}
+
+.goal-item
+{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+}
+
+.goal-item input[type="checkbox"]
+{
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #d77a9c;
+}
+
+.goal-item label
+{
+  cursor: pointer;
+  flex: 1;
+  padding-top: 0px;
+  transition: all 0.2s ease;
+}
+
+.goal-item input[type="checkbox"]:checked + label
+{
+  text-decoration: line-through;
+  color: #9a8a92;
 }
 
 .completed-box {

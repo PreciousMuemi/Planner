@@ -73,6 +73,113 @@ const MONTH_GOALS = {
   ]
 };
 
+// CRUD State Management with localStorage
+class GoalsManager {
+  constructor() {
+    this.storageKey = 'monthlyGoalsState';
+    this.state = this.loadState();
+  }
+
+  loadState() {
+    const stored = localStorage.getItem(this.storageKey);
+    return stored ? JSON.parse(stored) : this.initializeState();
+  }
+
+  initializeState() {
+    const state = {};
+    Object.keys(MONTH_GOALS).forEach(month => {
+      state[month] = MONTH_GOALS[month].map((goal, idx) => ({
+        id: `${month}-${idx}`,
+        text: goal,
+        completed: false
+      }));
+    });
+    this.saveState(state);
+    return state;
+  }
+
+  saveState(state) {
+    localStorage.setItem(this.storageKey, JSON.stringify(state));
+    this.state = state;
+  }
+
+  // READ: Get all goals for a month
+  getGoals(month) {
+    return this.state[month] || [];
+  }
+
+  // UPDATE: Toggle goal completion
+  toggleGoal(month, goalId) {
+    const goals = this.state[month];
+    const goal = goals.find(g => g.id === goalId);
+    if (goal) {
+      goal.completed = !goal.completed;
+      this.saveState(this.state);
+      return goal.completed;
+    }
+  }
+
+  // CREATE: Add new goal
+  addGoal(month, goalText) {
+    const goals = this.state[month];
+    const newGoal = {
+      id: `${month}-${Date.now()}`,
+      text: goalText,
+      completed: false
+    };
+    goals.push(newGoal);
+    this.saveState(this.state);
+    return newGoal;
+  }
+
+  // DELETE: Remove a goal
+  deleteGoal(month, goalId) {
+    const goals = this.state[month];
+    const idx = goals.findIndex(g => g.id === goalId);
+    if (idx !== -1) {
+      goals.splice(idx, 1);
+      this.saveState(this.state);
+      return true;
+    }
+    return false;
+  }
+}
+
+const goalsManager = new GoalsManager();
+
+function renderMonthGoals(month, dropdown) {
+  const goals = goalsManager.getGoals(month);
+  const goalsHTML = `
+    <div class="month-goals-panel">
+      <h4>▼ ${month}</h4>
+      <ul>
+        ${goals.map(goal => `
+          <li class="goal-item">
+            <input 
+              type="checkbox" 
+              id="${goal.id}"
+              data-goal-id="${goal.id}"
+              data-month="${month}"
+              ${goal.completed ? 'checked' : ''}
+            />
+            <label for="${goal.id}">${goal.text}</label>
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `;
+  dropdown.innerHTML = goalsHTML;
+  
+  // Attach checkbox event listeners
+  dropdown.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      const goalId = e.target.dataset.goalId;
+      const monthVal = e.target.dataset.month;
+      goalsManager.toggleGoal(monthVal, goalId);
+    });
+  });
+}
+
 document.querySelectorAll('.month-play').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -100,16 +207,7 @@ document.querySelectorAll('.month-play').forEach(btn => {
       dropdown.classList.remove('open');
       btn.classList.remove('is-active');
     } else {
-      const goals = MONTH_GOALS[month];
-      const goalsHTML = `
-        <div class="month-goals-panel">
-          <h4>${month}</h4>
-          <ul>
-            ${goals.map(goal => `<li>${goal}</li>`).join('')}
-          </ul>
-        </div>
-      `;
-      dropdown.innerHTML = goalsHTML;
+      renderMonthGoals(month, dropdown);
       dropdown.classList.add('open');
       btn.classList.add('is-active');
     }
