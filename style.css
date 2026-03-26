@@ -358,16 +358,77 @@ h1 {
   gap: 6px;
 }
 
+.month-item {
+  display: flex;
+  flex-direction: column;
+}
+
 .months li {
   color: #ece6ea;
   font-size: 1.02rem;
   padding: 3px 0;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: color 0.2s ease;
 }
 
 .months li:hover {
   color: #ffd8e9;
+}
+
+.month-play {
+  width: auto;
+  min-width: 22px;
+  height: 22px;
+  border: 1px solid #7b5770;
+  border-radius: 6px;
+  background: transparent;
+  color: #f0dbe7;
+  padding: 0 5px;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.month-play.is-active {
+  background: #d77a9c;
+  border-color: #d77a9c;
+  color: #1a1116;
+}
+
+.month-goals-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 0;
+}
+
+.month-goals-dropdown.open {
+  max-height: 200px;
+  margin-top: 8px;
+}
+
+.month-goals-panel {
+  background: rgba(28, 17, 25, 0.45);
+  border: 1px solid #70485f;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #f2eaf0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.month-goals-panel h4 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: #ffd8e9;
+}
+
+.month-goals-panel ul {
+  margin: 0;
+  padding-left: 16px;
+  display: grid;
+  gap: 6px;
 }
 
 .completed-box {
