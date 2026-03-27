@@ -302,6 +302,15 @@ h1 {
   font-weight: 600;
 }
 
+.side-card.monthly {
+  max-height: 620px;
+  overflow-y: auto;
+}
+
+.side-card.monthly h3 {
+  text-align: left;
+}
+
 .side-mini-card {
   background: #111419;
   border: 1px solid #2a2d32;
@@ -348,19 +357,23 @@ h1 {
 }
 
 .month-item {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  padding: 4px 0;
 }
 
 .months li {
   color: #ece6ea;
   font-size: 1.02rem;
-  padding: 3px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  padding: 0;
   transition: color 0.2s ease;
   text-align: left;
+}
+
+.month-item > span {
+  display: inline-block;
+  margin-left: 8px;
+  line-height: 22px;
+  vertical-align: middle;
 }
 
 .months li:hover {
@@ -380,6 +393,7 @@ h1 {
   line-height: 1;
   flex-shrink: 0;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .month-play.is-active {
@@ -390,16 +404,17 @@ h1 {
 
 .month-goals-dropdown {
   max-height: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   transition: max-height 0.3s ease;
   margin-top: 0;
+  margin-left: 0;
 }
 
 .month-goals-dropdown.open {
-  max-height: 400px;
+  max-height: 1000px;
   margin-top: 8px;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 .month-goals-panel {
@@ -411,11 +426,13 @@ h1 {
   font-size: 0.88rem;
   line-height: 1.5;
   text-align: left;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .month-goals-panel h4 {
   margin: 0 0 8px;
-    text-align: left;
+  text-align: left;
   font-size: 0.95rem;
   color: #ffd8e9;
 }
@@ -430,8 +447,9 @@ h1 {
 
 .goal-item
 {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: start;
   gap: 8px;
   text-align: left;
 }
@@ -449,9 +467,85 @@ h1 {
 .goal-item label
 {
   cursor: pointer;
-  flex: 1;
-  padding-top: 0px;
+  min-width: 0;
+  padding-top: 0;
   transition: all 0.2s ease;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.goal-text.is-complete {
+  text-decoration: line-through;
+  color: #9a8a92;
+}
+
+.goal-actions {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.goal-action-btn {
+  width: auto;
+  min-width: 22px;
+  height: 24px;
+  border: 1px solid #7b5770;
+  background: transparent;
+  color: #f0dbe7;
+  border-radius: 6px;
+  padding: 0 4px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.goal-action-btn:hover {
+  border-color: #d77a9c;
+  color: #ffd8e9;
+}
+
+.goal-add-form {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+}
+
+.goal-add-input {
+  width: 100%;
+  background: #1a1218;
+  border: 1px solid #6e4a5f;
+  color: #f2eaf0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 0.84rem;
+}
+
+.goal-add-input::placeholder {
+  color: #b8a6b1;
+}
+
+.goal-add-btn {
+  width: auto;
+  border: 1px solid #7b5770;
+  background: transparent;
+  color: #f0dbe7;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.goal-add-btn:hover {
+  border-color: #d77a9c;
+  color: #ffd8e9;
+}
+
+.goal-empty {
+  color: #c4b4bd;
+  font-size: 0.84rem;
+  font-style: italic;
 }
 
 .goal-item input[type="checkbox"]:checked + label
